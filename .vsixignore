@@ -7,7 +7,6 @@ tsconfig.json
 .vscode/**
 .vscode-test/**
 .kiro/**
-node_modules/**
 
 # Git
 .git/**

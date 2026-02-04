@@ -11,7 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onCommand:takeYourTime.openGame"
   ],
   "main": "./out/extension.js",
   "contributes": {
