@@ -24,6 +24,7 @@
 4. Type "Install from VSIX" and select `Extensions: Install from VSIX...`
 5. Navigate to the downloaded `.vsix` file and select it
 6. Reload VS Code when prompted
+7. Once installed - in your IDE > Crtl + Shift + P > select TakeYourTime Extension > pin it > and once clicking on it > the game tab will open.
 
 **Alternative method:**
 ```bash
@@ -165,6 +166,7 @@ None currently. Please report issues on the [GitHub Issues](../../issues) page.
 - Sandboxed webview with CSP
 - Multiple simultaneous game tabs
 - Type-safe configuration with Zod validation
+
 
 ---
 
