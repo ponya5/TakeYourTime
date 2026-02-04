@@ -1,0 +1,45 @@
+
+> take-your-time@0.1.0 pretest
+> npm run compile && npm run lint
+
+
+> take-your-time@0.1.0 compile
+> tsc -p ./
+
+
+> take-your-time@0.1.0 lint
+> eslint src --ext ts
+
+
+C:\Users\ponya\CursorRepo\TakeYourTime\src\errors\ExtensionError.ts
+  16:5  warning  Missing return type on function  @typescript-eslint/explicit-function-return-type
+
+C:\Users\ponya\CursorRepo\TakeYourTime\src\test\runTest.ts
+  4:1  warning  Missing return type on function  @typescript-eslint/explicit-function-return-type
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+> take-your-time@0.1.0 test
+> node ./out/test/runTest.js
+
+- Resolving version...
+✔ Validated version: 1.108.2
+✔ Found existing install in C:\Users\ponya\CursorRepo\TakeYourTime\.vscode-test\vscode-win32-x64-archive-1.108.2
+
+[main 2026-02-04T07:48:42.946Z] update#setState disabled
+[main 2026-02-04T07:48:42.946Z] update#ctor - updates are disabled by the environment
+Started local extension host with pid 19228.
+Loading development extension at c:\Users\ponya\CursorRepo\TakeYourTime
+MCP Registry configured: https://api.mcp.github.com
+Settings Sync: Account status changed from uninitialized to unavailable
+[0m[0m
+[0m  WebviewContentGenerator[0m
+  [32m  ✔[0m[90m Generate HTML contains CSP and Game URL[0m
+  [32m  ✔[0m[90m Escapes HTML in Game URL[0m
+[0m  Extension Test Suite[0m
+  [32m  ✔[0m[90m Extension should be present[0m
+  [32m  ✔[0m[90m Command should be registered[0m[31m (97ms)[0m
+[92m [0m[32m 4 passing[0m[90m (103ms)[0m
+[main 2026-02-04T07:48:44.853Z] Extension host with pid 19228 exited with code: 0, signal: unknown.
+Exit code:   0

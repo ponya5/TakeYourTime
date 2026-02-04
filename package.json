@@ -1,0 +1,102 @@
+{
+  "name": "take-your-time",
+  "displayName": "Take Your Time",
+  "description": "Play arcade games while waiting for AI agents or long-running tasks",
+  "version": "0.1.0",
+  "publisher": "kiro",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "takeYourTime.openGame",
+        "title": "Take Your Time: Open Game",
+        "icon": "$(game)"
+      }
+    ],
+    "configuration": {
+      "title": "Take Your Time",
+      "properties": {
+        "takeYourTime.gameUrl": {
+          "type": "string",
+          "default": "https://onlinegames.io/",
+          "description": "URL of the game emulator site"
+        },
+        "takeYourTime.fallbackUrl": {
+          "type": "string",
+          "description": "Fallback URL if primary site is unavailable"
+        },
+        "takeYourTime.enableErrorReporting": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable error reporting"
+        },
+        "takeYourTime.games": {
+          "type": "array",
+          "default": [
+            {
+              "name": "OnlineGames.io",
+              "url": "https://onlinegames.io/"
+            },
+            {
+              "name": "Playpager (Board Games)",
+              "url": "https://playpager.com/"
+            },
+            {
+              "name": "CrazyGames",
+              "url": "https://www.crazygames.com/"
+            },
+            {
+              "name": "SMB Games",
+              "url": "https://www.smbgames.be/"
+            }
+          ],
+          "description": "List of game websites to switch between",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Display name of the game site"
+              },
+              "url": {
+                "type": "string",
+                "description": "URL of the game site"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "glob": "^13.0.1",
+    "mocha": "^11.7.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}
