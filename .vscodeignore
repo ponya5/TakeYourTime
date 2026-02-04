@@ -1,0 +1,43 @@
+# Source files
+src/**
+tsconfig.json
+.eslintrc.json
+
+# Development files
+.vscode/**
+.vscode-test/**
+.kiro/**
+node_modules/**
+
+# Git
+.git/**
+.gitignore
+.gitattributes
+
+# Build artifacts and logs
+compile_log.txt
+compile_output.txt
+test_output.txt
+*.log
+
+# Tests
+**/test/**
+**/*.test.ts
+**/*.test.js
+
+# Documentation (keep README, LICENSE, exclude dev docs)
+PACKAGING.md
+QUICKSTART.md
+QUICK_START_SHARING.md
+GITHUB_CHECKLIST.md
+INSTALL.md
+SECURITY_REVIEW.md
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Misc
+*.vsix
+.vsixignore

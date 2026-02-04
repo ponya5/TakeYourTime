@@ -2,8 +2,6 @@
 
 A VS Code extension that lets you play arcade games while waiting for AI agents, builds, or long-running tasks to complete. Transform idle time into fun breaks without leaving your IDE.
 
-![Take Your Time Preview](media/smb_preview.png)
-
 ## Features
 
 - 🎯 **Quick Access**: Activity bar icon for instant game launch
