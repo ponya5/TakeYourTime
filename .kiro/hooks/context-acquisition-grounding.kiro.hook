@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Context Acquisition & Grounding",
+  "description": "Ensures the agent reviews steering files and pulls relevant MCP server data (aws-docs, strands-agents) before responding to maintain consistency with project standards and latest technical specifications",
+  "version": "1",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Before responding to this request, ensure you:\n1. Review relevant steering files in .kiro/steering/ to align with project-wide standards and conventions\n2. If the request involves AWS services or CDK, use MCP tools from aws-docs or aws-cdk servers to get the latest technical specifications\n3. If the request involves Strands Agents, use the strands-agents MCP server to search for relevant documentation\n4. Ground your response in the acquired context to ensure code consistency and accuracy with current best practices"
+  }
+}

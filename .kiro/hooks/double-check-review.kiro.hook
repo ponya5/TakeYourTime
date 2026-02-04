@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Double-Check Code Review",
+  "description": "Automatically prompts the agent to review code just written for security vulnerabilities and adherence to steering documentation after each agent execution completes",
+  "version": "1",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the code just written for security vulnerabilities and adherence to our steering docs. Check for common security issues like injection vulnerabilities, authentication/authorization problems, data exposure, and ensure all coding standards from our steering documentation are followed."
+  }
+}
