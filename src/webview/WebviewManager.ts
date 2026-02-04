@@ -38,7 +38,7 @@ export class TYTWebviewManager {
             crazyGamesBg: vscode.Uri.joinPath(this.context.extensionUri, 'media', 'crazyGames.png')
         };
 
-        const updateContent = (url: string) => {
+        const updateContent = (url: string): void => {
             panel.webview.html = WebviewContentGenerator.generate(
                 panel.webview,
                 url,
@@ -49,8 +49,6 @@ export class TYTWebviewManager {
 
         // Initial content
         updateContent(this.config.getGameUrl());
-
-        console.log('TYT: Webview HTML set successfully');
 
         // Handle messages from the webview
         panel.webview.onDidReceiveMessage(

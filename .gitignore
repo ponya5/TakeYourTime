@@ -3,3 +3,29 @@ node_modules
 .vscode-test
 *.vsix
 .DS_Store
+
+# Kiro configuration (not needed for extension functionality)
+.kiro/
+
+# Build artifacts
+compile_log.txt
+compile_output.txt
+test_output.txt
+
+# OS files
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local

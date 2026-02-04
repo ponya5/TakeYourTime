@@ -13,7 +13,7 @@ export class ExtensionError extends Error {
         }
     }
 
-    toJSON() {
+    toJSON(): { name: string; code: string; message: string; context?: Record<string, unknown> } {
         return {
             name: this.name,
             code: this.code,

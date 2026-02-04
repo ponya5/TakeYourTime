@@ -10,11 +10,9 @@ export class CommandHandler {
      */
     async handleOpenGame(): Promise<void> {
         try {
-            console.log('TYT: handleOpenGame called');
             vscode.window.showInformationMessage('Opening Take Your Time game...');
             const panel = this.webviewManager.createGamePanel();
             panel.reveal();
-            console.log('TYT: Panel created and revealed');
         } catch (error) {
             const commandError = new CommandError(
                 'Failed to open game panel',
