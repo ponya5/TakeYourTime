@@ -2,6 +2,12 @@
   <img src="media/TYT.png" alt="Take Your Time Logo" width="200"/>
   
   # Take Your Time 🎮
+
+
+<img width="1566" height="1052" alt="image" src="https://github.com/user-attachments/assets/b062ef4e-8d3b-4586-b172-66044008010a" />
+<img width="1625" height="1057" alt="image" src="https://github.com/user-attachments/assets/1895b3d5-203c-4dd3-b76d-9ee1b6159b5f" />
+<img width="1852" height="1087" alt="image" src="https://github.com/user-attachments/assets/9e9b3065-d07c-45c0-8ef2-1496b5b38821" />
+
   
   A VS Code extension that lets you play arcade games while waiting for AI agents, builds, or long-running tasks to complete. Transform idle time into fun breaks without leaving your IDE.
 </div>
