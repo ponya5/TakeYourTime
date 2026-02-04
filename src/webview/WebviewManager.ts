@@ -38,7 +38,20 @@ export class TYTWebviewManager {
             this.config.getGameUrl()
         );
 
+        console.log('TYT: Setting webview HTML, length:', content.length);
         panel.webview.html = content;
+        console.log('TYT: Webview HTML set successfully');
+
+        // Handle messages from the webview
+        panel.webview.onDidReceiveMessage(
+            message => {
+                if (message.command === 'openExternal') {
+                    vscode.env.openExternal(vscode.Uri.parse(message.url));
+                }
+            },
+            undefined,
+            this.context.subscriptions
+        );
 
         // Handle panel disposal
         panel.onDidDispose(() => {

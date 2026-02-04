@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import { z } from 'zod';
 
 const ConfigSchema = z.object({
-    gameUrl: z.string().url().default('https://www.smbgames.be/'),
+    gameUrl: z.string().url().default('https://onlinegames.io/'),
     fallbackUrl: z.string().url().optional().nullable(),
     enableErrorReporting: z.boolean().default(true)
 });
@@ -31,7 +31,7 @@ export class ExtensionConfig {
             // If config parsing fails, use defaults
             console.warn('Failed to parse configuration, using defaults:', error);
             return {
-                gameUrl: 'https://www.smbgames.be/',
+                gameUrl: 'https://onlinegames.io/',
                 fallbackUrl: undefined,
                 enableErrorReporting: true
             };
