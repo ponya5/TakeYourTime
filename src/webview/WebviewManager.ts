@@ -54,9 +54,29 @@ export class TYTWebviewManager {
         panel.webview.onDidReceiveMessage(
             message => {
                 if (message.command === 'openExternal') {
-                    vscode.env.openExternal(vscode.Uri.parse(message.url));
+                    // Validate URL before opening
+                    try {
+                        const uri = vscode.Uri.parse(message.url, true);
+                        if (uri.scheme === 'http' || uri.scheme === 'https') {
+                            vscode.env.openExternal(uri);
+                        } else {
+                            console.error('TYT: Invalid URL scheme:', uri.scheme);
+                        }
+                    } catch (error) {
+                        console.error('TYT: Failed to parse URL:', error);
+                    }
                 } else if (message.command === 'switchGame') {
-                    updateContent(message.url);
+                    // Validate URL format
+                    try {
+                        const uri = vscode.Uri.parse(message.url, true);
+                        if (uri.scheme === 'http' || uri.scheme === 'https') {
+                            updateContent(message.url);
+                        } else {
+                            console.error('TYT: Invalid game URL scheme:', uri.scheme);
+                        }
+                    } catch (error) {
+                        console.error('TYT: Failed to parse game URL:', error);
+                    }
                 }
             },
             undefined,

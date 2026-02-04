@@ -5,8 +5,8 @@ export class WebviewContentGenerator {
    * Generates HTML content for the webview
    */
   static generate(webview: vscode.Webview, gameUrl: string, gamePresets: { name: string, url: string }[], resources?: { smbBg: vscode.Uri, crazyGamesBg: vscode.Uri }): string {
-    const csp = this.generateCSP(webview);
     const nonce = this.getNonce();
+    const csp = this.generateCSP(webview, nonce);
 
     const normalizedUrl = gameUrl.toLowerCase();
     const isSmbGame = normalizedUrl.includes('smbgames.be') || normalizedUrl.includes('mario');
@@ -163,14 +163,15 @@ export class WebviewContentGenerator {
 </html>`;
   }
 
-  private static generateCSP(webview: vscode.Webview): string {
+  private static generateCSP(webview: vscode.Webview, nonce: string): string {
     return [
       `default-src 'none'`,
-      `script-src 'unsafe-inline' 'unsafe-eval'`,
-      `style-src 'unsafe-inline'`,
+      `script-src 'nonce-${nonce}'`,
+      `style-src 'unsafe-inline' ${webview.cspSource}`,
       `img-src ${webview.cspSource} https: data:`,
-      `frame-src * https: http:`,
-      `font-src https: data:`
+      `frame-src https: http:`,
+      `font-src https: data:`,
+      `connect-src https:`
     ].join('; ');
   }
 
