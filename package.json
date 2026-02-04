@@ -3,7 +3,7 @@
   "displayName": "Take Your Time",
   "description": "Play arcade games while waiting for AI agents or long-running tasks",
   "version": "0.1.0",
-  "publisher": "Daniel Shalom",
+  "publisher": "DanielShalom",
   "icon": "media/TYT.png",
   "engines": {
     "vscode": "^1.85.0"
