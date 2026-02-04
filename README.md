@@ -20,8 +20,6 @@
 
 - 🎯 **Quick Access**: Activity bar icon for instant game launch
 - 🎮 **Multiple Game Sites**: Switch between OnlineGames.io, CrazyGames, Playpager, and SMB Games
-- 📑 **Multiple Tabs**: Open several games simultaneously
-- 🔒 **Safe & Secure**: Runs in sandboxed webviews with Content Security Policy
 - ⚡ **Non-Blocking**: Games run independently without interfering with your work
 
 ## Installation
