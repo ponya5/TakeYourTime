@@ -33,13 +33,23 @@ export class TYTWebviewManager {
             this.config
         );
 
-        const content = WebviewContentGenerator.generate(
-            panel.webview,
-            this.config.getGameUrl()
-        );
+        const resources = {
+            smbBg: vscode.Uri.joinPath(this.context.extensionUri, 'media', 'smb_preview.png'),
+            crazyGamesBg: vscode.Uri.joinPath(this.context.extensionUri, 'media', 'crazyGames.png')
+        };
 
-        console.log('TYT: Setting webview HTML, length:', content.length);
-        panel.webview.html = content;
+        const updateContent = (url: string) => {
+            panel.webview.html = WebviewContentGenerator.generate(
+                panel.webview,
+                url,
+                this.config.getGamePresets(),
+                resources
+            );
+        };
+
+        // Initial content
+        updateContent(this.config.getGameUrl());
+
         console.log('TYT: Webview HTML set successfully');
 
         // Handle messages from the webview
@@ -47,6 +57,8 @@ export class TYTWebviewManager {
             message => {
                 if (message.command === 'openExternal') {
                     vscode.env.openExternal(vscode.Uri.parse(message.url));
+                } else if (message.command === 'switchGame') {
+                    updateContent(message.url);
                 }
             },
             undefined,

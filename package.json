@@ -36,6 +36,41 @@
           "type": "boolean",
           "default": true,
           "description": "Enable error reporting"
+        },
+        "takeYourTime.games": {
+          "type": "array",
+          "default": [
+            {
+              "name": "OnlineGames.io",
+              "url": "https://onlinegames.io/"
+            },
+            {
+              "name": "Playpager (Board Games)",
+              "url": "https://playpager.com/"
+            },
+            {
+              "name": "CrazyGames",
+              "url": "https://www.crazygames.com/"
+            },
+            {
+              "name": "SMB Games",
+              "url": "https://www.smbgames.be/"
+            }
+          ],
+          "description": "List of game websites to switch between",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Display name of the game site"
+              },
+              "url": {
+                "type": "string",
+                "description": "URL of the game site"
+              }
+            }
+          }
         }
       }
     }
