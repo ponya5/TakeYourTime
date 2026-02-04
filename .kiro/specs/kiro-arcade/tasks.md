@@ -1,0 +1,24 @@
+# Tasks: Take Your Time (TYT) Extension
+
+- [x] **Project Setup & Configuration** <!-- id: 0 -->
+    - [x] Initialize project structure (folders `src`, `test`, `resources`). <!-- id: 1 -->
+    - [x] Create `package.json` with commands, configuration, and dependencies. <!-- id: 2 -->
+    - [x] Create `tsconfig.json` for TypeScript configuration. <!-- id: 3 -->
+    - [x] Create `.eslintrc.json` for linting rules. <!-- id: 4 -->
+    - [x] Create `.gitignore` and `README.md`. <!-- id: 5 -->
+- [x] **Core Infrastructure** <!-- id: 6 -->
+    - [x] Implement Error Handling classes (`ExtensionError`, `CommandError`, `ConfigurationError`). <!-- id: 7 -->
+    - [x] Implement `ExtensionConfig` class (Zod validation). <!-- id: 8 -->
+    - [x] Create `src/types/index.ts` for type definitions. <!-- id: 9 -->
+- [x] **Webview Implementation** <!-- id: 10 -->
+    - [x] Implement `WebviewContentGenerator` (HTML generation, CSP). <!-- id: 11 -->
+    - [x] Implement `WebviewPanelFactory` (Panel creation, icon setup). <!-- id: 12 -->
+    - [x] Implement `WebviewManager` (Lifecycle management). <!-- id: 13 -->
+- [x] **Command & Extension Entry** <!-- id: 14 -->
+    - [x] Implement `CommandHandler` class. <!-- id: 15 -->
+    - [x] Implement `extension.ts` (Activation, Registration). <!-- id: 16 -->
+- [x] **Testing & Verification** <!-- id: 17 -->
+    - [x] Set up test infrastructure (`test/runTest.ts`, `test/suite/index.ts`). <!-- id: 18 -->
+    - [x] Write unit tests for `WebviewContentGenerator`. <!-- id: 19 -->
+    - [x] Write integration tests for Extension Activation. <!-- id: 20 -->
+    - [x] Verify manual checklist (Icon, click, game load). <!-- id: 21 -->
