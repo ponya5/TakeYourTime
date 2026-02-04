@@ -1,6 +1,10 @@
-# Take Your Time 🎮
-
-A VS Code extension that lets you play arcade games while waiting for AI agents, builds, or long-running tasks to complete. Transform idle time into fun breaks without leaving your IDE.
+<div align="center">
+  <img src="media/TYT.png" alt="Take Your Time Logo" width="200"/>
+  
+  # Take Your Time 🎮
+  
+  A VS Code extension that lets you play arcade games while waiting for AI agents, builds, or long-running tasks to complete. Transform idle time into fun breaks without leaving your IDE.
+</div>
 
 ## Features
 

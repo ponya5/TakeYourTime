@@ -4,6 +4,7 @@
   "description": "Play arcade games while waiting for AI agents or long-running tasks",
   "version": "0.1.0",
   "publisher": "kiro",
+  "icon": "media/TYT.png",
   "engines": {
     "vscode": "^1.85.0"
   },

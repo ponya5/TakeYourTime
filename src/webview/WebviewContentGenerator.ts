@@ -47,7 +47,7 @@ export class WebviewContentGenerator {
                     <div class="blocked-icon">⚠️</div>
                     <h2>${titleText}</h2>
                     <p>This game website cannot be played directly inside VS Code.</p>
-                    <button class="btn-primary" onclick="openExternal('${this.escapeHtml(gameUrl)}')">
+                    <button class="btn-primary" data-url="${this.escapeHtml(gameUrl)}">
                         🚀 Open in Browser
                     </button>
                     <div style="margin-top: 10px; font-size: 0.8em; opacity: 0.7">
@@ -142,13 +142,13 @@ export class WebviewContentGenerator {
   <div class="toolbar">
     <div class="title">
       <span>🎮</span>
-      <select id="game-selector" onchange="switchGame(this.value)" style="margin-left: 8px; padding: 4px; border-radius: 4px; background: var(--vscode-dropdown-background); color: var(--vscode-dropdown-foreground); border: 1px solid var(--vscode-dropdown-border);">
+      <select id="game-selector" style="margin-left: 8px; padding: 4px; border-radius: 4px; background: var(--vscode-dropdown-background); color: var(--vscode-dropdown-foreground); border: 1px solid var(--vscode-dropdown-border);">
         ${options}
       </select>
     </div>
     <div class="actions">
-      <button class="btn" onclick="reloadGame()">🔄 Reload</button>
-      <button class="btn" onclick="openExternal('${this.escapeHtml(gameUrl)}')">🌐 Open in Browser</button>
+      <button class="btn" id="reload-btn">🔄 Reload</button>
+      <button class="btn" id="external-btn">🌐 Open in Browser</button>
     </div>
   </div>
   
@@ -301,6 +301,37 @@ export class WebviewContentGenerator {
       const vscode = acquireVsCodeApi();
       const gameFrame = document.getElementById('game-frame');
       let loader = document.getElementById('loading-overlay');
+      
+      // Add event listeners
+      document.addEventListener('DOMContentLoaded', () => {
+        const selector = document.getElementById('game-selector');
+        const reloadBtn = document.getElementById('reload-btn');
+        const externalBtn = document.getElementById('external-btn');
+        const primaryBtn = document.querySelector('.btn-primary');
+        
+        if (selector) {
+          selector.addEventListener('change', (e) => {
+            switchGame(e.target.value);
+          });
+        }
+        
+        if (reloadBtn) {
+          reloadBtn.addEventListener('click', reloadGame);
+        }
+        
+        if (externalBtn) {
+          externalBtn.addEventListener('click', () => {
+            openExternal('${this.escapeHtml(gameUrl)}');
+          });
+        }
+        
+        if (primaryBtn) {
+          primaryBtn.addEventListener('click', () => {
+            const url = primaryBtn.getAttribute('data-url');
+            if (url) openExternal(url);
+          });
+        }
+      });
       
       // Handle iframe load
       if (gameFrame) {
