@@ -1,7 +1,7 @@
 <div align="center">
   <img src="media/TYT.png" alt="Take Your Time Logo" width="200"/>
   
-  # Take Your Time 🎮
+  # Take Your Time IDE Arcade🎮
 
 
 <table style="width: 100%;">
